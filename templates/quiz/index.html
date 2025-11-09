@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Let's Quiz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+   
+
+    /* Background with image, fallback color, and overlay */
+    body {
+      background-color: #0d1b2a; /* fallback color */
+      background: url('{% static "image/bghome.webp" %}') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    
+
+    /* Ensure content appears above overlay */
+    .jumbotron, .navbar, .footer {
+      position: relative;
+      z-index: 1;
+    }
+
+   
+
+    /* Responsive spacing for smaller devices */
+    @media (max-width: 768px) {
+      .jumbotron {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  {% include "quiz/navbar.html" %}
+  <br><br>  <br><br>
+
+  <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center" style="
+  background: rgba(255, 255, 255, 0.1); /* White with 10% opacity */
+  backdrop-filter: blur(15px);          /* Glossy blur effect */
+  -webkit-backdrop-filter: blur(15px);  /* Safari support */
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Soft shadow */
+  border: 1px solid rgba(255, 255, 255, 0.18);  /* Light border for glass look */
+  width: 100%;
+max-width: 1200px;
+margin: 0 auto; /* center horizontally */
+
+">
+  <div class="container text-center">
+<h1 class="display-1 text-info" style="color:black;">Let's Quiz</h1>
+
+    <p class="display-4 d-none d-sm-block">Challenge yourself and become an expert..</p>
+    <p class="lead">We host quizzes covering a wide range of subjects..</p>
+    <p class="lead">Register now if you’re new, and unlock access to millions of quizzes tailored to your favorite topics.</p>
+    <p><stro    ng>Begin Your Adventure Today:</strong></p>
+    <a href="/student/studentsignup" class="btn btn-lg" style=" border-radius: 20px; border: 2px solid white;  background: linear-gradient(45deg, #005abbff, #95fbe8ff, #005abbff);
+ color: black;">
+  <i class="fa fa-user-plus" aria-hidden="true"></i> Register now
+</a>
+
+  </div>  
+</section>
+
+  <br><br><br>
+  {% include "quiz/footer.html" %}
+</body>
+
+</html>

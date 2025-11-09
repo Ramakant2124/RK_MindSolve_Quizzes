@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Feedback</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+    background:linear-gradient(45deg, #9410e6ff, #ffffffff, #9410e6ff);
+            min-height: 100vh;
+        }
+
+        .contact {
+            margin-top: 2%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contactus {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            width: 90%;
+        }
+
+        .contactus_form,
+        .contactus_details {
+            border: 3px solid rgba(255, 255, 255, 0.6);
+            width: 100%;
+            max-width: 450px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contactus_details b {
+            color: #000;
+        }
+
+        .contactus_details h4 {
+            color: #110d0d;
+        }
+
+        .contactus_details a {
+            text-decoration: none;
+            color: #0f1112;
+        }
+
+        h2 {
+            text-align: center;
+            color: #000;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+        }
+
+        @media screen and (max-width: 900px) {
+            .contactus {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {% include "quiz/navbar.html" %}
+<br><br>
+    <div class="contact">
+        <h2>Contact Us</h2>
+
+        <div class="contactus">
+            <!-- Left Side: Feedback Form -->
+            <div class="contactus_form">
+                <h3 style="text-align:center;">Send Us Your Valuable Feedback!</h3>
+                <form method="POST" autocomplete="off">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <br>
+                    <input type="submit" value="Send Message" class="btn btn-primary btn-lg">
+                </form>
+            </div>
+
+            <!-- Right Side: Contact Details -->
+            <div class="contactus_details">
+                <h3>Contact Details</h3>
+                <p><b>Email ID:</b> chaudhariramakant754@gmail.com</p>
+                <p><b>Phone:</b> 9834777647</p>
+                <p><b>Address:</b> At-Post Arjun Nagar Kasoda</p>
+                <p><b>Office Hours:</b> 8:00 am to 8:00 pm</p>
+                <p><b>Office Location:</b></p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3755.112840149785!2d75.32891307504194!3d21.143013083595434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd9418eccefe0f3%3A0xf7d64c3269ab0bc6!2sRamakant%20Plywood%2C%20Kasoda%2C%20Maharashtra%20425110!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+    {% include "quiz/footer.html" %}
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style media="screen">
+    body {
+      margin: 0;
+      height: 100vh;
+      background: url("{% static 'image/stu.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .jumbotron {
+      background: transparent !important;
+      box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.92);
+      border-radius: 40px;
+      padding: 2rem;
+      border: 1px solid rgba(16, 5, 5, 0.86);
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+    .btn-gradient {
+      background: linear-gradient(45deg, #005abbff, #95fbe8ff, #005abbff);
+      border: none;
+      color: white !important;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(0, 242, 254, 0.4);
+    }
+
+    .btn-gradient:hover {
+      background: linear-gradient(135deg, #00f2fe, #4facfe);
+      box-shadow: 0 6px 20px rgba(0, 242, 254, 0.6);
+      text-decoration: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  {% include "quiz/navbar.html" %}
+  <br><br><br><br><br><br><br><br><br><br><br>
+
+  <div class="jumbotron">
+    <h1 class="display-4"><b>Hello, Student</b></h1>
+
+    <hr class="my-4">
+
+    <br>
+    <p class="lead">
+      <a class="btn btn-gradient btn-lg" href="studentsignup" role="button">Create Your Account</a>
+      <a class="btn btn-gradient btn-lg" href="studentlogin" role="button">Login</a>
+    </p>
+  </div>
+
+  <br><br>
+  {% include "quiz/footer.html" %}
+</body>
+
+</html>

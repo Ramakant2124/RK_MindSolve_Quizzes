@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+    background:linear-gradient(45deg, #9410e6ff, #ffffffff, #9410e6ff);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* About Section Container */
+        .about {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* About Us Header Box */
+        .about_us {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid #ccc;
+        }
+
+        .about_us p {
+            max-width: 800px;
+            margin: 10px auto;
+            font-size: 1.1rem;
+        }
+
+        /* Developer Image Section */
+        .about_img {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .about_img h2 {
+            margin-bottom: 20px;
+        }
+
+        .about_img .images {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .about_img .images div {
+            text-align: center;
+        }
+
+        .about_img img {
+            height: 200px;
+            border-radius: 15px;
+            border: 2px solid #ccc;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .jumbotron {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% include "quiz/navbar.html" %}
+<br>
+    <div class="about">
+        <div class="about_us">
+            <h2>About Us</h2>
+            <p>We provide a platform for students to practice questions. Teachers can add courses/exams and questions to the system.</p>
+            
+            <p class="lead">
+                <a class="btn" href="/" role="button">HOME</a>
+            </p>
+        </div>
+
+        <div class="about_img">
+            <h2>Our Developers</h2>
+            <div class="images">
+                <div>
+                    <img src="{% static 'image/Ramakant.jpg' %}" alt="Mr. Ramakant Chaudhari" title="Ramakant Chaudhari">
+                    <p>Mr. Ramakant Chaudhari<br><small>Founder</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "quiz/footer.html" %}
+
+</body>
+</html>
+
